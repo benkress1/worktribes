@@ -349,30 +349,37 @@
          11 · Future tribes — slim strip
          ============================================================ -->
     <section id="future" class="section future surface-dark">
-      <form class="future-strip" onsubmit="return false">
+      <form class="future-strip" id="future-form" action="https://assets.mailerlite.com/jsonp/2445723/forms/190331231293933227/subscribe" method="post" target="_blank">
         <h2>
           Comms is the first.
           <em class="accent-italic">Which is next? Tell us — you'll be the first to know.</em>
         </h2>
 
-        <div class="future-right">
+        <div class="future-right" id="future-right">
           <div class="email-grid">
-            <input class="email-field" type="email" placeholder="your@work.email" aria-label="Your work email" />
+            <input class="email-field" type="email" name="fields[email]" placeholder="your@work.email" aria-label="Your work email" required />
             <button class="email-submit" type="submit">Notify me <span>→</span></button>
           </div>
 
           <div class="roles">
             <span class="mono">WHICH COMMUNITY?</span>
-            <label class="role-chip"><input type="checkbox" name="community" value="Marketing" />Marketing</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="Brand & Design" />Brand &amp; Design</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="Creative & Content" />Creative &amp; Content</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="HR & People" />HR &amp; People</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="Legal" />Legal</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="Product" />Product</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="Founders" />Founders</label>
-            <label class="role-chip"><input type="checkbox" name="community" value="Other" />Other</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Marketing" />Marketing</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Brand & Design" />Brand &amp; Design</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Creative & Content" />Creative &amp; Content</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="HR & People" />HR &amp; People</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Legal" />Legal</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Product" />Product</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Founders" />Founders</label>
+            <label class="role-chip"><input type="checkbox" name="fields[name][]" value="Other" />Other</label>
           </div>
         </div>
+
+        <div class="future-success" id="future-success" style="display: none">
+          <p class="future-success-line">Thanks — you're on the list.<br>We'll be in touch when the next tribe opens.</p>
+        </div>
+
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
       </form>
     </section>
 
@@ -424,6 +431,25 @@
       </span>
     </div>
   </footer>
+  <!-- Future Tribes signup → MailerLite (account 2445723, form 190331231293933227).
+       Posts in the background so the on-brand confirmation shows in place. -->
+  <script>
+    (function () {
+      var form = document.getElementById('future-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+          .catch(function () {})
+          .finally(function () {
+            var right = document.getElementById('future-right');
+            var done = document.getElementById('future-success');
+            if (right) right.style.display = 'none';
+            if (done) done.style.display = 'block';
+          });
+      });
+    })();
+  </script>
 
 </body>
 </html>

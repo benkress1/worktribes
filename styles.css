@@ -970,6 +970,30 @@ img, svg { display: block; }
   gap: 10px;
   width: 100%;
 }
+/* On-brand confirmation shown after a successful MailerLite submit */
+.future-success {
+  flex: 1 1 420px;
+}
+.future-success-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  color: var(--fg);
+  margin: 0;
+}
+.future-success-line::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 5px;
+  background: var(--accent);
+  margin-right: 12px;
+  vertical-align: middle;
+}
 .email-field {
   background: var(--card);
   border: 1.5px solid var(--border);
