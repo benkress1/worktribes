@@ -936,7 +936,7 @@ img, svg { display: block; }
 .future { padding: 64px 56px; }
 .future-strip {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 48px;
   flex-wrap: wrap;
@@ -957,11 +957,18 @@ img, svg { display: block; }
   font-weight: 400;
   color: var(--accent);
 }
+/* Right column: email box with the community chips stacked beneath it,
+   so the chips read as part of the email entry rather than a full-width row. */
+.future-right {
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+}
 .email-grid {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 10px;
-  flex: 1 1 420px;
+  width: 100%;
 }
 .email-field {
   background: var(--card);
