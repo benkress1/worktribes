@@ -349,7 +349,7 @@
          11 · Future tribes — slim strip
          ============================================================ -->
     <section id="future" class="section future surface-dark">
-      <form class="future-strip" id="future-form" action="https://assets.mailerlite.com/jsonp/2445723/forms/190331231293933227/subscribe" method="post" target="_blank">
+      <form class="future-strip" id="future-form" action="https://assets.mailerlite.com/jsonp/2445723/forms/190331231293933227/subscribe" method="post" target="ml-sink">
         <h2>
           Comms is the first.
           <em class="accent-italic">Which is next? Tell us — you'll be the first to know.</em>
@@ -381,6 +381,9 @@
         <input type="hidden" name="ml-submit" value="1" />
         <input type="hidden" name="anticsrf" value="true" />
       </form>
+
+      <!-- Hidden target: native form POST lands here instead of navigating away. -->
+      <iframe name="ml-sink" title="Signup submission target" aria-hidden="true" tabindex="-1" style="position:absolute;left:-9999px;width:0;height:0;border:0"></iframe>
     </section>
 
   </main>
@@ -432,21 +435,20 @@
     </div>
   </footer>
   <!-- Future Tribes signup → MailerLite (account 2445723, form 190331231293933227).
-       Posts in the background so the on-brand confirmation shows in place. -->
+       Native form POST goes to the hidden iframe (same urlencoded request MailerLite's
+       own no-JS form makes); we just swap in the on-brand confirmation afterwards. -->
   <script>
     (function () {
       var form = document.getElementById('future-form');
       if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-          .catch(function () {})
-          .finally(function () {
-            var right = document.getElementById('future-right');
-            var done = document.getElementById('future-success');
-            if (right) right.style.display = 'none';
-            if (done) done.style.display = 'block';
-          });
+      form.addEventListener('submit', function () {
+        // Defer so the browser finishes serializing + posting the form first.
+        setTimeout(function () {
+          var right = document.getElementById('future-right');
+          var done = document.getElementById('future-success');
+          if (right) right.style.display = 'none';
+          if (done) done.style.display = 'block';
+        }, 0);
       });
     })();
   </script>
