@@ -652,6 +652,37 @@ img, svg { display: block; }
   margin: 0;
   max-width: 540px;
 }
+.howjoin-foot {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.howjoin-foot-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  color: var(--muted);
+  margin: 0;
+}
+/* ~80% of the primary Apply CTA — same red, deliberately subordinate */
+.howjoin-cta {
+  background: var(--accent);
+  color: #fdf6e6;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
 /* ============================================================
    09 · Pricing
