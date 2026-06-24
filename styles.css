@@ -1141,12 +1141,14 @@ img, svg { display: block; }
   min-height: 60vh;
 }
 .pay-wrap { max-width: 760px; margin: 0 auto; }
-/* Split layout (pay-individual): intro text left, embed right on desktop */
-.pay-wrap--split { max-width: 1080px; }
+/* Split layout (pay-individual): intro text left, embed right on desktop.
+   The embed column is intentionally wider so Stripe's pricing table has room
+   to render its full side-by-side plan cards rather than the compact toggle. */
+.pay-wrap--split { max-width: 1240px; }
 .pay-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
   align-items: start;
 }
 .pay-grid .pay-embed { margin-top: 0; }
