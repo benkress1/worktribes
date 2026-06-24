@@ -42,7 +42,7 @@
     <section class="pay-wrap">
       <span class="mono pay-kicker"><span class="mono-dot"></span>MEMBERSHIP · INDIVIDUAL</span>
 
-      <h1 class="pay-h1">Welcome to <em class="accent-italic">The Comms Tribe.</em></h1>
+      <h1 class="pay-h1">Welcome to <em class="accent-italic">The Comms Tribe</em> at worktribes.</h1>
 
       <p class="pay-lead">
         You've been approved. One last step — pick your plan and complete your membership.
@@ -50,29 +50,12 @@
       </p>
 
       <div class="pay-embed">
-        <!-- ============================================================
-             STRIPE PRICING TABLE GOES HERE
-             1. In your Stripe Dashboard, create a Pricing Table containing
-                the Individual monthly ($29/mo) and annual ($299/yr) prices:
-                https://docs.stripe.com/no-code/pricing-table
-             2. Copy the embed snippet Stripe generates and replace the two
-                placeholders below:
-                  - pricing-table-id  → prctbl_xxxxxxxxxxxxxx
-                  - publishable-key   → pk_live_xxxxxxxxxxxxxx
-             3. Uncomment the <script> + <stripe-pricing-table> lines, then
-                delete the .pay-embed-placeholder block beneath them.
-             ============================================================ -->
-        <!--
+        <!-- Stripe Pricing Table — Individual (monthly $29 / annual $299) -->
         <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
         <stripe-pricing-table
-          pricing-table-id="REPLACE_WITH_PRICING_TABLE_ID"
-          publishable-key="REPLACE_WITH_PUBLISHABLE_KEY">
+          pricing-table-id="prctbl_1TloOWS0ynBw5YU67AQgkeY2"
+          publishable-key="pk_live_51SZThhS0ynBw5YU646vFAW23R2xsCOmbyQ9GudmmTAl2rObZJaLgQpwIMlVoxgp6INrMtWfdq20wkfgCSiDrwX38007vuUqXHT">
         </stripe-pricing-table>
-        -->
-        <div class="pay-embed-placeholder">
-          <span class="mono">STRIPE PRICING TABLE</span>
-          <p>The Individual plan checkout (monthly &amp; annual) will appear here once the Stripe pricing table is wired up.</p>
-        </div>
       </div>
 
       <div class="pay-member">
