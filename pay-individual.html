@@ -39,23 +39,27 @@
   </header>
 
   <main class="pay surface-dark">
-    <section class="pay-wrap">
-      <span class="mono pay-kicker"><span class="mono-dot"></span>MEMBERSHIP · INDIVIDUAL</span>
+    <section class="pay-wrap pay-wrap--split">
+      <div class="pay-grid">
+        <div class="pay-intro">
+          <span class="mono pay-kicker"><span class="mono-dot"></span>MEMBERSHIP · INDIVIDUAL</span>
 
-      <h1 class="pay-h1">Welcome to <em class="accent-italic">The Comms Tribe</em> at worktribes.</h1>
+          <h1 class="pay-h1">Welcome to <em class="accent-italic">The Comms Tribe</em> at worktribes.</h1>
 
-      <p class="pay-lead">
-        You've been approved. One last step — pick your plan and complete your membership.
-        Once payment lands, we'll send your Slack invite within 24 hours.
-      </p>
+          <p class="pay-lead">
+            You've been approved. One last step — pick your plan and complete your membership.
+            Once payment lands, we'll send your Slack invite within 24 hours.
+          </p>
+        </div>
 
-      <div class="pay-embed">
+        <div class="pay-embed">
         <!-- Stripe Pricing Table — Individual (monthly $29 / annual $299) -->
         <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
         <stripe-pricing-table
           pricing-table-id="prctbl_1TloOWS0ynBw5YU67AQgkeY2"
           publishable-key="pk_live_51SZThhS0ynBw5YU646vFAW23R2xsCOmbyQ9GudmmTAl2rObZJaLgQpwIMlVoxgp6INrMtWfdq20wkfgCSiDrwX38007vuUqXHT">
         </stripe-pricing-table>
+        </div>
       </div>
 
       <div class="pay-member">
