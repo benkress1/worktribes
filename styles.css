@@ -753,6 +753,26 @@ img, svg { display: block; }
   font-weight: 500;
 }
 .price-sub { color: var(--muted); margin-top: 6px; display: block; }
+
+/* Dual-pricing display (Individual tile) — monthly + annual as an equal choice */
+.price-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 24px;
+}
+.price-option { display: flex; flex-direction: column; }
+.price-option + .price-option {
+  padding-left: 22px;
+  border-left: 1px solid var(--border);
+}
+.price-card.featured .price-option + .price-option {
+  border-left-color: rgba(253, 246, 230, 0.28);
+}
+.price-duo .price-row { margin-top: 0; }
+.price-duo .price-num { font-size: 52px; line-height: 0.95; letter-spacing: -1.9px; }
+.price-duo .price-period { font-size: 15px; }
+.price-duo .price-sub { margin-top: 8px; }
 .price-who {
   font-family: var(--font-body);
   font-size: 16px;
@@ -1113,6 +1133,75 @@ img, svg { display: block; }
 .footer-legal .links { display: flex; gap: 24px; }
 
 /* ============================================================
+   Pay pages (/pay-individual, /pay-agency) — post-application,
+   noindexed, reuse the shared nav / footer / type / surfaces.
+   ============================================================ */
+.pay {
+  padding: 96px 56px 120px;
+  min-height: 60vh;
+}
+.pay-wrap { max-width: 760px; margin: 0 auto; }
+.pay-kicker { color: var(--accent); margin-bottom: 24px; display: inline-block; }
+.pay-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 0.95;
+  letter-spacing: -2.6px;
+  color: var(--fg);
+  margin: 0;
+  text-wrap: balance;
+}
+.pay-h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+.pay-lead {
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 24px 0 0;
+  max-width: 620px;
+}
+.pay-embed { margin-top: 48px; }
+.pay-embed-placeholder {
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 48px 32px;
+  text-align: center;
+}
+.pay-embed-placeholder .mono { color: var(--accent); display: block; margin-bottom: 12px; }
+.pay-embed-placeholder p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 440px;
+}
+.pay-member {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.pay-member-h {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.6px;
+  color: var(--fg);
+  margin: 0 0 12px;
+}
+.pay-member-link {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
+}
+
+/* ============================================================
    Mobile responsive — ≤ 768px stacks everything cleanly.
    ============================================================ */
 @media (max-width: 768px) {
@@ -1121,6 +1210,9 @@ img, svg { display: block; }
   .inside { padding: 48px 24px 64px; }
   .nav { padding: 16px 20px; }
   .nav-links { display: none; }
+  .pay { padding: 56px 24px 80px; }
+  .pay-h1 { font-size: clamp(40px, 10vw, 56px); letter-spacing: -1.6px; }
+  .pay-lead { font-size: 17px; }
 
   .hero-h1 {
     font-size: clamp(40px, 11.5vw, 64px);
@@ -1141,6 +1233,9 @@ img, svg { display: block; }
   .runway h2 { font-size: clamp(40px, 10vw, 60px); letter-spacing: -1.6px; }
   .runway-sub { font-size: clamp(26px, 7vw, 38px); letter-spacing: -1px; }
   .price-num { font-size: clamp(56px, 16vw, 72px); letter-spacing: -2px; }
+  .price-duo { gap: 16px; }
+  .price-option + .price-option { padding-left: 16px; }
+  .price-duo .price-num { font-size: clamp(34px, 9vw, 44px); letter-spacing: -1.4px; }
   .quote-text { font-size: clamp(24px, 6.8vw, 36px); letter-spacing: -1px; }
   .pull-quote blockquote { padding-left: 0; }
   .quote-mark { font-size: clamp(140px, 38vw, 200px); top: 8px; left: 0; }
