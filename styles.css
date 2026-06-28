@@ -741,14 +741,14 @@ img, svg { display: block; }
 .price-num {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 88px;
-  line-height: 0.9;
-  letter-spacing: -3.2px;
+  font-size: 52px;
+  line-height: 0.95;
+  letter-spacing: -1.9px;
   color: var(--fg);
 }
 .price-period {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 15px;
   color: var(--muted);
   font-weight: 500;
 }
@@ -770,8 +770,6 @@ img, svg { display: block; }
   border-left-color: rgba(253, 246, 230, 0.28);
 }
 .price-duo .price-row { margin-top: 0; }
-.price-duo .price-num { font-size: 52px; line-height: 0.95; letter-spacing: -1.9px; }
-.price-duo .price-period { font-size: 15px; }
 .price-duo .price-sub { margin-top: 8px; }
 .price-who {
   font-family: var(--font-body);
@@ -1245,10 +1243,9 @@ img, svg { display: block; }
   .pricing h2,
   .runway h2 { font-size: clamp(40px, 10vw, 60px); letter-spacing: -1.6px; }
   .runway-sub { font-size: clamp(26px, 7vw, 38px); letter-spacing: -1px; }
-  .price-num { font-size: clamp(56px, 16vw, 72px); letter-spacing: -2px; }
+  .price-num { font-size: clamp(36px, 9vw, 46px); letter-spacing: -1.4px; }
   .price-duo { gap: 16px; }
   .price-option + .price-option { padding-left: 16px; }
-  .price-duo .price-num { font-size: clamp(34px, 9vw, 44px); letter-spacing: -1.4px; }
   .quote-text { font-size: clamp(24px, 6.8vw, 36px); letter-spacing: -1px; }
   .pull-quote blockquote { padding-left: 0; }
   .quote-mark { font-size: clamp(140px, 38vw, 200px); top: 8px; left: 0; }
