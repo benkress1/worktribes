@@ -39,42 +39,26 @@
   </header>
 
   <main class="pay surface-dark">
-    <section class="pay-wrap">
-      <span class="mono pay-kicker"><span class="mono-dot"></span>MEMBERSHIP · AGENCY</span>
+    <section class="pay-wrap pay-wrap--split">
+      <div class="pay-grid">
+        <div class="pay-intro">
+          <span class="mono pay-kicker"><span class="mono-dot"></span>MEMBERSHIP · AGENCY</span>
 
-      <h1 class="pay-h1">Welcome to <em class="accent-italic">The Comms Tribe</em> — Agency.</h1>
+          <h1 class="pay-h1">Welcome to <em class="accent-italic">The Comms Tribe.</em></h1>
 
-      <p class="pay-lead">
-        Your agency seat is approved. Complete payment below and we'll send your team's
-        Slack invite within 24 hours.
-      </p>
+          <p class="pay-lead">
+            Your agency application has been approved. Complete payment below and we'll send you
+            your individual Slack invite within 24 hours.
+          </p>
+        </div>
 
-      <div class="pay-embed">
-        <!-- ============================================================
-             STRIPE CHECKOUT (Agency — $75/month) GOES HERE
-             Easiest no-code path is a Stripe Buy Button tied to the
-             Agency $75/mo recurring price:
-             https://docs.stripe.com/payment-links/buy-button
-             1. Create the Buy Button in your Stripe Dashboard for the
-                Agency monthly price.
-             2. Replace the placeholders below:
-                  - buy-button-id    → buy_btn_xxxxxxxxxxxxxx
-                  - publishable-key  → pk_live_xxxxxxxxxxxxxx
-             3. Uncomment the <script> + <stripe-buy-button> lines, then
-                delete the .pay-embed-placeholder block beneath them.
-             (Prefer fully embedded Checkout instead? See
-              https://docs.stripe.com/checkout/embedded/quickstart)
-             ============================================================ -->
-        <!--
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-        <stripe-buy-button
-          buy-button-id="REPLACE_WITH_BUY_BUTTON_ID"
-          publishable-key="REPLACE_WITH_PUBLISHABLE_KEY">
-        </stripe-buy-button>
-        -->
-        <div class="pay-embed-placeholder">
-          <span class="mono">STRIPE CHECKOUT · $75 / MONTH</span>
-          <p>The Agency seat checkout ($75/month, per seat) will appear here once the Stripe Buy Button is wired up.</p>
+        <div class="pay-embed">
+          <!-- Stripe Pricing Table — Agency -->
+          <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+          <stripe-pricing-table
+            pricing-table-id="prctbl_1TrE0qS0ynBw5YU6TcY3CMMx"
+            publishable-key="pk_live_51SZThhS0ynBw5YU646vFAW23R2xsCOmbyQ9GudmmTAl2rObZJaLgQpwIMlVoxgp6INrMtWfdq20wkfgCSiDrwX38007vuUqXHT">
+          </stripe-pricing-table>
         </div>
       </div>
 
